@@ -240,17 +240,26 @@
     ```
 
   **단, 파라미터에 클로저가 2개 이상 존재하는 경우에는 무조건 내려쓰기합니다.**
-  ```swift
-  UIView.animate(
-      withDuration: 0.25,
-      animations: {
-      ...
-      },
-      completion: { finished in
-      ...
-      }
-  )
-  ```
+  - **GOOD👏**
+    ```swift
+    UIView.animate(
+        withDuration: 0.25,
+        animations: {
+        ...
+       },
+       completion: { finished in
+         ...
+        }
+    )
+    ```
+  - **BAD👎**
+    ```swift
+    UIView.animate(withDuration: 0.25, animations: { 
+        ...
+    }, completion: { finished in
+        ... 
+    }
+    ```
 
 - 배열의 컨텐츠를 정의할 때 길이가 길어진다면 다음과 같이 줄바꿈합니다.
   - **GOOD👏**
@@ -268,7 +277,7 @@
       nextButton])
     ```
 
-- 변수의 네이밍과 타입명이 길어서 정의하는데 100줄이 넘어간다면 다음과 같이 줄바꿈 합니다.
+- 변수의 네이밍과 타입명이 길어서 정의하는데 100자가 넘어간다면 다음과 같이 줄바꿈 합니다.
   - **GOOD👏**
     ```swift
     private var myPageTableViewDataSource = 
