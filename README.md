@@ -57,7 +57,7 @@
   - [Naming](#naming)
     - [Format](#format)
       - [타입(struct, class, enum)과 protocol 이름은 PascalCase를 사용하고, 그 외에는 lowerCamelCase 를 사용한다.](#타입struct-class-enum과-protocol-이름은-pascalcase를-사용하고-그-외에는-lowercamelcase-를-사용한다)
-      - [Bool타입은 is, has, should 와같은 be동사를 접두사를 붙여서 사용합니다.](#bool타입은-is-has-should-와같은-be동사를-접두사를-붙여서-사용합니다)
+      - [Bool타입은 is, has 와같이 Bool타입임을 분명히하는 접두사를 붙여서 사용합니다.](#bool타입은-is-has-와같이-bool타입임을-분명히하는-접두사를-붙여서-사용합니다)
       - [약어로 시작하는 경우 소문자로 표기하고, 그 외의 경우에는 항상 대문자로 표기한다.](#약어로-시작하는-경우-소문자로-표기하고-그-외의-경우에는-항상-대문자로-표기한다)
       - [이름이 모호할 경우 이름 타입에 대한 힌트를 포함한다.](#이름이-모호할-경우-이름-타입에-대한-힌트를-포함한다)
       - [Action 함수의 네이밍은 '동사 + 목적어'의 형태를 사용한다.](#action-함수의-네이밍은-동사--목적어의-형태를-사용한다)
@@ -442,7 +442,7 @@ class SpaceFleet: SpaceThing {
 let myFleet = SpaceFleet()
 ```
 
-#### Bool타입은 is, has, should 와같은 be동사를 접두사를 붙여서 사용합니다.
+#### Bool타입은 is, has 와같이 Bool타입임을 분명히하는 접두사를 붙여서 사용합니다.
 - 이것은 변수가 다른 타입이 아닌 Bool이라는 것을 분명히 한다.
 
 #### 약어로 시작하는 경우 소문자로 표기하고, 그 외의 경우에는 항상 대문자로 표기한다.
