@@ -40,7 +40,7 @@
       - [namespace는 오직 enum으로만 만든다.](#namespace는-오직-enum으로만-만든다)
       - [extension에서 접근제어자를 설정할때는 선언이 아닌 extension에 설정한다.](#extension에서-접근제어자를-설정할때는-선언이-아닌-extension에-설정한다)
       - [FileHeader는 제거한다.](#fileheader는-제거한다)
-      - [let, var를 바인딩할 때는 hoist 형태로 바인딩한다](#let-var를-바인딩할-때는-hoist-형태로-바인딩한다)
+      - [let, var를 바인딩할 때는 hoist 형태로 바인딩한다.](#let-var를-바인딩할-때는-hoist-형태로-바인딩한다)
       - [파일의 끝에는 빈 공백줄을 추가한다.](#파일의-끝에는-빈-공백줄을-추가한다)
       - [파라미터에 Protocol을 받을때는 필요하지 않다면 Generic 대신 some을 사용한다.](#파라미터에-protocol을-받을때는-필요하지-않다면-generic-대신-some을-사용한다)
       - [고차함수를 사용할 때 KeyPath로 접근할 수 있다면 KeyPath를 사용한다.](#고차함수를-사용할-때-keypath로-접근할-수-있다면-keypath를-사용한다)
@@ -62,7 +62,7 @@
       - [이름이 모호할 경우 이름 타입에 대한 힌트를 포함한다.](#이름이-모호할-경우-이름-타입에-대한-힌트를-포함한다)
       - [Action 함수의 네이밍은 '동사 + 목적어'의 형태를 사용한다.](#action-함수의-네이밍은-동사--목적어의-형태를-사용한다)
       - [Delegate method를 만들 때 이름 없는 첫 번째 매개 변수가 delegate source가 되어야 한다.](#delegate-method를-만들-때-이름-없는-첫-번째-매개-변수가-delegate-source가-되어야-한다)
-      - [함수 이름 앞에는 되록 get과 같은 광범위한 의미를 지닌 단어의 사용을 지양한다.](#함수-이름-앞에는-되록-get과-같은-광범위한-의미를-지닌-단어의-사용을-지양한다)
+      - [함수 이름 앞에는 되도록 get과 같은 광범위한 의미를 지닌 단어의 사용을 지양한다.](#함수-이름-앞에는-되도록-get과-같은-광범위한-의미를-지닌-단어의-사용을-지양한다)
       - [뷰(UIView 및 하위 타입)타입 변수의 이름을 지을 때 타입 이름을 뒤에 붙여준다.](#뷰uiview-및-하위-타입타입-변수의-이름을-지을-때-타입-이름을-뒤에-붙여준다)
       - [테스트 이름을 한글로 작성하는 것을 허용한다.](#테스트-이름을-한글로-작성하는-것을-허용한다)
   - [Style](#style)
@@ -122,6 +122,9 @@
 
 #### MARK 구문은 위와 공백을 추가한다.
 
+<details>
+    <summary>예시</summary>
+
 - GOOD 👏
 ```swift
 
@@ -145,26 +148,34 @@ extension AStore {
     ...
 }
 ```
+</details>
 
 #### Scope의 끝에는 빈 줄을 제거한다.
 
+<details>
+    <summary>예시</summary>
+
 - GOOD 👏
 ```swift
-override func viewDidLoad() {  
+override func viewDidLoad() {
     super.viewDidLoad()
 }
 ```
 
 - BAD 👎
 ```swift
-override func viewDidLoad() {  
+override func viewDidLoad() {
     super.viewDidLoad()
 
 }
 ```
+</details>
 
 #### Scope의 시작에는 빈 줄을 제거한다.
 
+<details>
+    <summary>예시</summary>
+
 - GOOD 👏
 ```swift
 extension ViewController {
@@ -179,6 +190,7 @@ extension ViewController {
     func asdf() {}
 }
 ```
+</details>
 
 #### Scope와 Scope 사이에는 공백을 추가한다.
 
@@ -186,6 +198,9 @@ extension ViewController {
 
 #### 공백줄은 1줄까지만 허용한다.
 
+<details>
+    <summary>예시</summary>
+
 - GOOD 👏
 ```swift
 func asdf() {
@@ -204,6 +219,7 @@ func asdf() {
     print(asdf)
 }
 ```
+</details>
 
 #### 공백은 1칸까지만 허용한다.
 
@@ -217,7 +233,10 @@ func asdf() {
 
 #### FileHeader는 제거한다.
 
-#### let, var를 바인딩할 때는 hoist 형태로 바인딩한다
+#### let, var를 바인딩할 때는 hoist 형태로 바인딩한다.
+
+<details>
+    <summary>예시</summary>
 
 - GOOD 👏
 ```swift
@@ -230,10 +249,14 @@ switch case let .foo(a, b):
 switch case .foo(let a, let b):
     ...
 ```
+</details>
 
 #### 파일의 끝에는 빈 공백줄을 추가한다.
 
 #### 파라미터에 Protocol을 받을때는 필요하지 않다면 Generic 대신 some을 사용한다.
+
+<details>
+    <summary>예시</summary>
 
 - GOOD 👏
 ```swift
@@ -244,8 +267,12 @@ func foo<T: AProtocol>(bar: T) {}
 ```swift
 func foo(bar: some AProtocol) {}
 ```
+</details>
 
 #### 고차함수를 사용할 때 KeyPath로 접근할 수 있다면 KeyPath를 사용한다.
+
+<details>
+    <summary>예시</summary>
 
 - GOOD 👏
 ```swift
@@ -256,8 +283,12 @@ let foo = bar.map(\.name)
 ```swift
 let foo = bar.map { $0.name }
 ```
+</details>
 
 #### 중괄호 주위에 공백을 준다.
+
+<details>
+    <summary>예시</summary>
 
 - GOOD 👏
 ```swift
@@ -268,8 +299,12 @@ foo.filter{ true }.map{ $0 }
 ```swift
 foo.filter{true}.map{$0}
 ```
+</details>
 
-#### 식별자 바로 뒤에 콜론 : 을 배치하고 그 뒤에 공백을 넣는다.
+#### 식별자 바로 뒤에 콜론( : )을 배치하고 그 뒤에 공백을 넣는다.
+
+<details>
+    <summary>예시</summary>
 
 - GOOD 👏
 ```swift
@@ -283,8 +318,12 @@ let foo : String
 let bar :String
 struct Foo : Bar {}
 ```
+</details>
 
 #### 가독성을 위해 함수의 리턴 화살표 양쪽에 공백을 둔다.
+
+<details>
+    <summary>예시</summary>
 
 - GOOD 👏
 ```swift
@@ -295,8 +334,12 @@ func foo() -> String {}
 ```swift
 func foo()->String {}
 ```
+</details>
 
 #### TODO와 FIXME는 Warning을 발생시켜야 한다.
+
+<details>
+    <summary>예시</summary>
 
 - GOOD 👏
 ```swift
@@ -317,6 +360,7 @@ func foo() {
 // FIXME: 파라미터 이름 변경 예정
 func bar(param: String) {}
 ```
+</details>
 
 ### Functions
 
@@ -324,35 +368,42 @@ func bar(param: String) {}
 
 #### 함수 정의 시 매개변수나 호출 시 인수는 같은 줄에 놓거나, 줄 당 하나만 있게한다. 여러 줄로 만든다면, 각각 새 줄에 놓고 들여쓰기를 추가한다.
 
+<details>
+    <summary>예시</summary>
+
 - GOOD 👏
 ```swift
 func reticulateSplines(
-  spline: [Double],
-  adjustmentFactor: Double,
-  translateConstant: Int,
-  comment: String
+    spline: [Double],
+    adjustmentFactor: Double,
+    translateConstant: Int,
+    comment: String
 ) -> Bool {
-  // reticulate code goes here
+    // reticulate code goes here
 }
 
 let actionSheet = UIActionSheet(
-  title: "정말 계정을 삭제하실 건가요?",
-  delegate: self,
-  cancelButtonTitle: "취소",
-  destructiveButtonTitle: "삭제해주세요"
+    title: "정말 계정을 삭제하실 건가요?",
+    delegate: self,
+    cancelButtonTitle: "취소",
+    destructiveButtonTitle: "삭제해주세요"
 )
 ```
 
 - BAD 👎
 ```swift
 func reticulateSplines(spline: [Double], adjustmentFactor: Double, translateConstant: Int, comment: String) -> Bool {
-  // reticulate code goes here
+    // reticulate code goes here
 }
 
 let actionSheet = UIActionSheet(title: "정말 계정을 삭제하실 건가요?", delegate: self, cancelButtonTitle: "취소", destructiveButtonTitle: "삭제해주세요")
 ```
+</details>
 
 #### 함수 매개변수에 closure 가 2개 이상 존재하는 경우 내려쓰기를 한다.
+
+<details>
+    <summary>예시</summary>
 
 - GOOD 👏
 ```swift
@@ -378,12 +429,16 @@ UIView.animate(
     }
 )
 ```
+</details>
 
 ### Operators
 
 #### infix 연산자는 양쪽에 하나의 공간이 있어야 한다.
 - 이 규칙은 범위 연산자에는 적용되지 않는다(예: 1...3) 및 postfix 또는 접두사 연산자 (예: guest? , -1)
 - 많은 연산자가 있는 문장을 시각적으로 그룹화하기 위해 공백의 폭을 다양하게 하기 보다는 괄호를 선호한다.
+
+<details>
+    <summary>예시</summary>
 
 - GOOD 👏
 ```swift
@@ -402,6 +457,7 @@ let mask = (UIAccessibilityTraitButton|UIAccessibilityTraitSelected)
 let capacity=newCapacity
 let latitude = region.center.latitude - region.span.latitudeDelta/2.0
 ```
+</details>
 
 ---
 
@@ -413,39 +469,46 @@ let latitude = region.center.latitude - region.span.latitudeDelta/2.0
 
 #### 타입(struct, class, enum)과 protocol 이름은 PascalCase를 사용하고, 그 외에는 lowerCamelCase 를 사용한다.
 
-- 예외: 동일한 이름의 속성이나 메서드가 더 높은 액세스 수준을 가진 경우, private 속성에 밑줄 접두사를 붙일 수 있다.
+> 예외: 동일한 이름의 속성이나 메서드가 더 높은 액세스 수준을 가진 경우, private 속성에 밑줄 접두사를 붙일 수 있다.
+
+<details>
+    <summary>예시</summary>
 
 - GOOD 👏
 ```swift
 protocol SpaceThing {
- // ...
+    // ...
 }
 
 class SpaceFleet: SpaceThing {
 
- enum Formation {
-   // ...
- }
+    enum Formation {
+        // ...
+    }
 
- class Spaceship {
-   // ...
- }
+    class Spaceship {
+        // ...
+    }
 
- var ships: [Spaceship] = []
- static let worldName: String = "Earth"
+    var ships: [Spaceship] = []
+    static let worldName: String = "Earth"
 
- func addShip(_ ship: Spaceship) {
-   // ...
- }
+    func addShip(_ ship: Spaceship) {
+        // ...
+    }
 }
 
 let myFleet = SpaceFleet()
 ```
+</details>
 
 #### Bool타입은 is, has 와같이 Bool타입임을 분명히하는 접두사를 붙여서 사용합니다.
 - 이것은 변수가 다른 타입이 아닌 Bool이라는 것을 분명히 한다.
 
 #### 약어로 시작하는 경우 소문자로 표기하고, 그 외의 경우에는 항상 대문자로 표기한다.
+
+<details>
+    <summary>예시</summary>
 
 - GOOD 👏
 ```swift
@@ -460,8 +523,12 @@ let HTML: String
 let userId: String
 class UrlConvertible {}
 ```
+</details>
 
 #### 이름이 모호할 경우 이름 타입에 대한 힌트를 포함한다.
+
+<details>
+    <summary>예시</summary>
 
 - GOOD 👏
 ```swift
@@ -474,6 +541,7 @@ let cancelButton: UIButton
 let title: String
 let cancel: UIButton
 ```
+</details>
 
 #### Action 함수의 네이밍은 '동사 + 목적어'의 형태를 사용한다.
 - 주어가 **명확**하다면 생략할 수 있다.
@@ -481,24 +549,31 @@ let cancel: UIButton
 - will~은 특정 행위가 일어나기 직전이고, did~는 특정 행위가 일어난 직후다.
 - should~은 일반적으로 Bool을 리턴하는 함수에 사용한다.
 
+<details>
+    <summary>예시</summary>
+
 - GOOD 👏
 ```swift
 func backButtonDidTap() {
-  // ...
+    // ...
 }
 ```
 
 - BAD 👎
 ```swift
 func back() {
-  // ...
+    // ...
 }
 func tapBack() {
-  // ...
+    // ...
 }
 ```
+</details>
 
 #### Delegate method를 만들 때 이름 없는 첫 번째 매개 변수가 delegate source가 되어야 한다.
+
+<details>
+    <summary>예시</summary>
 
 - GOOD 👏
 ```swift
@@ -511,27 +586,32 @@ func namePickerViewShouldReload(_ namePickerView: NamePickerView) -> Bool
 func didSelectName(namePicker: NamePickerViewController, name: String)
 func namePickerShouldReload() -> Bool
 ```
+</details>
 
-#### 함수 이름 앞에는 되록 get과 같은 광범위한 의미를 지닌 단어의 사용을 지양한다.
+#### 함수 이름 앞에는 되도록 get과 같은 광범위한 의미를 지닌 단어의 사용을 지양한다.
 - 다른 개발자가 읽었을 때 한 번에 이해할 수 있을 만한 함수의 액션을 나타내는 단어를 사용합니다.
+
+<details>
+    <summary>예시</summary>
 
 - GOOD 👏
 ```swift
 func fetchUserInfo() {
-...
+    ...
 }
 ```
 
 - BAD 👎
 ```swift
 func getUser() {
-...
+    ...
 }
 ```
+</details>
 
 #### 뷰(UIView 및 하위 타입)타입 변수의 이름을 지을 때 타입 이름을 뒤에 붙여준다.
 - 타입 이름을 줄이지 않는다.
-  - 예외: `UICollectionViewCell`, `UITableViewCell` 의 경우는 너무 길기 때문에 Cell만 활용하는 것을 허용한다.
+  > 예외: `UICollectionViewCell`, `UITableViewCell` 의 경우는 너무 길기 때문에 Cell만 활용하는 것을 허용한다.
 
 #### 테스트 이름을 한글로 작성하는 것을 허용한다.
 - 한글로 작성하면 올바른 테스트인지 판단하기가 더 쉽다.
@@ -551,10 +631,13 @@ func getUser() {
 #### tuple 멤버의 이름을 지정하여 더욱 명확하게 표시한다.
 - 튜플의 필드가 3개이상이라면 struct를 사용하는 것을 권장하고 4개라면 필수적으로 struct로 변경한다.
 
+<details>
+    <summary>예시</summary>
+
 - GOOD 👏
 ```swift
 func whatever() -> (width: Int, height: Int) {
- return (width: 4, height: 4)
+    return (width: 4, height: 4)
 }
 
 let rect = whatever()
@@ -565,15 +648,19 @@ rect.y
 - BAD 👎
 ```swift
 func whatever() -> (Int, Int) {
- return (4, 4)
+    return (4, 4)
 }
 
 let rect = whatever()
 rect.0
 rect.1
 ```
+</details>
 
 #### 불필요한 괄호는 생략한다.
+
+<details>
+    <summary>예시</summary>
 
 - GOOD 👏
 ```swift
@@ -590,9 +677,13 @@ switch (someValue) { ... }
 let evens = userCounts.filter { (number) in number % 2 == 0 }
 let squares = userCounts.map() { $0 * $0 }
 ```
+</details>
 
 #### String은 +를 사용하여 연산하는 것을 지양한다.
 - 컴파일 시간에 영향을 주는 주요 원인이므로 지양한다.
+
+<details>
+    <summary>예시</summary>
 
 - GOOD 👏
 ```swift
@@ -607,11 +698,15 @@ let firstName = "김"
 let secondName = "티드"
 let wholeName = firstName+secondName
 ```
+</details>
 
 ### Closures
 
 #### 파라미터와 리턴 타입이 없는 closure 정의시에는 () -> Void를 사용한다.
 - 가독성과 일관성을 위하여 () -> Void로 정의한다.
+
+<details>
+    <summary>예시</summary>
 
 - GOOD 👏
 ```swift
@@ -623,26 +718,34 @@ let completion: () -> Void
 let completion: () -> ()
 let completion: (Void) -> (Void)
 ```
+</details>
 
 #### 사용되지 않은 closure 매개변수의 이름을 placeholder(_)로 지정한다.
 - 어떤 매개변수가 사용되고 어떤 매개변수가 사용되지 않는지 명확히 함으로써 closure를 읽을 때 필요한 인지 오버헤드가 감소한다.
 
+<details>
+    <summary>예시</summary>
+
 - GOOD 👏
 ```swift
 someAsyncThing() { _, _, arg3 in
-  print(arg3)
+    print(arg3)
 }
 ```
 
 - BAD 👎
 ```swift
 someAsyncThing() { arg2, arg2, arg3 in
-  print(arg3)
+    print(arg3)
 }
 ```
+</details>
 
 #### closure 매개변수가 마지막 끝에 하나 있다면 가능한 한 trailing closure 구문을 사용한다.
 - 둘 이상이라면 평범하게 사용한다.
+
+<details>
+    <summary>예시</summary>
 
 - GOOD 👏
 ```swift
@@ -650,25 +753,33 @@ UIView.animate(withDuration: 1.0) {
     self.myView.alpha = 0
 }
 
-UIView.animate(withDuration: 1.0, animations: {
- self.myView.alpha = 0
-}, completion: { finished in
- self.myView.removeFromSuperview()
-})
+UIView.animate(
+    withDuration: 1.0,
+    animations: {
+        self.myView.alpha = 0
+    },
+    completion: { finished in
+        self.myView.removeFromSuperview()
+    }
+)
 ```
 
 - BAD 👎
 ```swift
 UIView.animate(withDuration: 1.0, animations: {
- self.myView.alpha = 0
+    self.myView.alpha = 0
 })
 
-UIView.animate(withDuration: 1.0, animations: {
- self.myView.alpha = 0
-}) { f in
- self.myView.removeFromSuperview()
+UIView.animate(
+    withDuration: 1.0,
+    animations: {
+        self.myView.alpha = 0
+    }
+) { f in
+    self.myView.removeFromSuperview()
 }
 ```
+</details>
 
 ### Properties
 
@@ -679,7 +790,7 @@ UIView.animate(withDuration: 1.0, animations: {
 ### Optional
 
 #### 가능한 한 ? 로 선언한다.
-- 예외: 단위 테스트에서는 ! 로 선언하는 것이 허용된다.
+> 예외: 단위 테스트에서는 ! 로 선언하는 것이 허용된다.
 
 #### Optional 변수의 값은 가능한 한 옵셔널 바인딩으로 얻는다.
 - !를 사용한 강제 언래핑은 앱 크래시의 가능성이 있기 때문이다.
@@ -694,16 +805,19 @@ UIView.animate(withDuration: 1.0, animations: {
 
 #### 강제 언랩핑 옵션을 사용하지 않고 가능하면 init 타임에 속성을 초기화하는 것을 선호한다.
 
+<details>
+    <summary>예시</summary>
+
 - GOOD 👏
 ```swift
 class MyClass: NSObject {
 
-  init() {
-    someValue = 0
-    super.init()
-  }
+    init() {
+        someValue = 0
+        super.init()
+    }
 
-  var someValue: Int
+    var someValue: Int
 }
 ```
 
@@ -711,14 +825,15 @@ class MyClass: NSObject {
 ```swift
 class MyClass: NSObject {
 
-  init() {
-    super.init()
-    someValue = 5
-  }
+    init() {
+        super.init()
+        someValue = 5
+    }
 
-  var someValue: Int!
+    var someValue: Int!
 }
 ```
+</details>
 
 #### `init()`에서 의미 있는 작업이나 time-intensive 작업을 수행하는 것을 피한다.
 - 데이터베이스 연결 열기, 네트워크 요청, 디스크에서 대량의 데이터 읽기 등의 작업을 수행하지 않는다. 객체를 사용할 준비가 되기 전에 이러한 작업을 수행해야 하는 경우 start() 메서드과 같은 것을 만든다.
@@ -743,7 +858,6 @@ class MyClass: NSObject {
 
 #### 가능한 한 immutable 값을 선호한다.
 - 새 컬렉션에 추가하는 대신 map 과 compactMap 을 사용한다. 변경 가능한 컬렉션에서 요소를 제거하는 대신 filter를 사용한다.
-
 
 #### Type method는 기본적으로 static 으로 정의한다.
 - 메소드를 재정의가 필요한 경우에 class 키워드를 사용한다.
