@@ -45,7 +45,7 @@
       - [파라미터에 Protocol을 받을때는 필요하지 않다면 Generic 대신 some을 사용한다.](#파라미터에-protocol을-받을때는-필요하지-않다면-generic-대신-some을-사용한다)
       - [고차함수를 사용할 때 KeyPath로 접근할 수 있다면 KeyPath를 사용한다.](#고차함수를-사용할-때-keypath로-접근할-수-있다면-keypath를-사용한다)
       - [중괄호 주위에 공백을 준다.](#중괄호-주위에-공백을-준다)
-      - [식별자 바로 뒤에 콜론 : 을 배치하고 그 뒤에 공백을 넣는다.](#식별자-바로-뒤에-콜론--을-배치하고-그-뒤에-공백을-넣는다)
+      - [식별자 바로 뒤에 콜론( : )을 배치하고 그 뒤에 공백을 넣는다.](#식별자-바로-뒤에-콜론--을-배치하고-그-뒤에-공백을-넣는다)
       - [가독성을 위해 함수의 리턴 화살표 양쪽에 공백을 둔다.](#가독성을-위해-함수의-리턴-화살표-양쪽에-공백을-둔다)
       - [TODO와 FIXME는 Warning을 발생시켜야 한다.](#todo와-fixme는-warning을-발생시켜야-한다)
     - [Functions](#functions)
@@ -889,6 +889,7 @@ class MyClass: NSObject {
 ## Programming Recommendations
 
 #### 일반적인 변수, 함수의 선언 순서는 아래와 같다.
+- Nested Type
 - Property Wrapper 변수
 - 상수
 - 변수
@@ -898,3 +899,32 @@ class MyClass: NSObject {
 - public 함수
 - private 함수
 - extension
+
+```swift
+// Example
+final class AViewController: UIViewController {
+  private enum Metric {}
+
+  @IBOutlet weak var asdf: UILabel!
+
+  private let constant = ""
+
+  private var variable = ""
+
+  private var computed: String {
+    ""
+  }
+
+  init() {}
+
+  deinit() {}
+
+  override func viewDidLoad() { suepr.viewDidLoad() }
+
+  public func publicFunction() {}
+
+  private func privateFunction() {}
+}
+
+extension AViewController {}
+```
