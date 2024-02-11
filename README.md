@@ -292,7 +292,7 @@ let foo = bar.map { $0.name }
 
 - GOOD 👏
 ```swift
-foo.filter{ true }.map{ $0 }
+foo.filter { true }.map { $0 }
 ```
 
 - BAD 👎
