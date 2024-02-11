@@ -853,6 +853,23 @@ class MyClass: NSObject {
 - 타입 정의부안에서 메서드를 정의하는 것을 선호한다.
 
 #### public 또는 internal 상수 및 함수를 네임스페이스로 묶고 싶을 때는 case 없는 enum을 사용한다.
+<details>
+    <summary>예시</summary>
+
+- GOOD 👏
+```swift
+enum Namespace {
+    static let constant = ""
+}
+```
+
+- BAD 👎
+```swift
+struct Namespace {
+    static let constant = ""
+}
+```
+</details>
 
 #### 네임스페이스 없이 전역 상수와 함수를 만들지 않는다. 명료함을 위해서라면 네임스페이스를 제한없이 중첩한다.
 
