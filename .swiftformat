@@ -1,5 +1,5 @@
 
---exclude fastlane,Dependencies,Carthage
+--exclude fastlane,Tuist,Dependencies,Carthage
 
 # options
 --maxwidth 120
